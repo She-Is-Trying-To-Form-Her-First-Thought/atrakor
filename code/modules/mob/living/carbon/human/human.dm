@@ -714,6 +714,7 @@
 	. = ..()
 	// Handles changing limb colors and stuff
 	hud_used.healthdoll?.update_appearance()
+	hud_used.healthbutton.update_appearance()
 
 /mob/living/carbon/human/fully_heal(heal_flags = HEAL_ALL)
 	if(heal_flags & HEAL_NEGATIVE_MUTATIONS)
