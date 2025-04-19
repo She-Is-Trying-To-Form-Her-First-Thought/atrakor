@@ -24,8 +24,6 @@
 	/// Boolean that tells us if this is a planetary station. (like IceBoxStation)
 	var/planetary = FALSE
 
-	///The type of mining Z-level that should be loaded.
-	var/minetype = "lavaland"
 	///If no minetype is set, this will be the blacklist file used
 	var/blacklist_file
 
@@ -178,9 +176,6 @@
 	else if (!isnull(temp))
 		log_world("map_config space_empty_levels is not a number!")
 		return
-
-	if ("minetype" in json)
-		minetype = json["minetype"]
 
 	if ("planetary" in json)
 		planetary = json["planetary"]
