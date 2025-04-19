@@ -157,8 +157,8 @@
 
 /atom/movable/screen/language_menu
 	name = "language menu"
-	icon = 'icons/hud/screen_midnight.dmi'
-	icon_state = "talk_wheel"
+	icon = 'icons/hud_atrakor/hud_buttons.dmi'
+	icon_state = "language"
 	screen_loc = ui_language_menu
 	mouse_over_pointer = MOUSE_HAND_POINTER
 
@@ -387,7 +387,8 @@
 	return
 
 /atom/movable/screen/floor_changer/vertical
-	icon_state = "floor_change_v"
+	icon = 'icons/hud_atrakor/hud_x32.dmi'
+	icon_state = "up_down"
 	vertical = TRUE
 
 /atom/movable/screen/spacesuit
@@ -397,7 +398,7 @@
 
 /atom/movable/screen/mov_intent
 	name = "run/walk toggle"
-	icon = 'icons/hud/screen_midnight.dmi'
+	icon = 'icons/hud_atrakor/hud_x32.dmi'
 	icon_state = "running"
 	mouse_over_pointer = MOUSE_HAND_POINTER
 

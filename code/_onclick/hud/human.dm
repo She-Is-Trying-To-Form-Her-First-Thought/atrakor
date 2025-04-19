@@ -61,34 +61,20 @@
 	static_inventory += using
 
 	using = new /atom/movable/screen/language_menu(null, src)
-	using.icon = ui_style
-	using.screen_loc = ui_human_language
+	using.screen_loc = "EAST-1:-16,SOUTH+6"
 	static_inventory += using
 
-	using = new /atom/movable/screen/navigate(null, src)
-	using.icon = ui_style
-	using.screen_loc = ui_human_navigate
-	static_inventory += using
-
-	using = new /atom/movable/screen/area_creator(null, src)
-	using.icon = ui_style
-	using.screen_loc = ui_human_area
-	static_inventory += using
-
-	action_intent = new /atom/movable/screen/combattoggle/flashy(null, src)
-	action_intent.icon = ui_style
-	action_intent.screen_loc = ui_combat_toggle
+	action_intent = new /atom/movable/screen/combattoggle/aircraft(null, src)
+	action_intent.screen_loc = "CENTER+4:16,SOUTH+0"
 	static_inventory += action_intent
 
 	floor_change = new /atom/movable/screen/floor_changer/vertical(null, src)
-	floor_change.icon = ui_style
-	floor_change.screen_loc = ui_human_floor_changer
+	floor_change.screen_loc = "CENTER+6:16,SOUTH+1:16"
 	static_inventory += floor_change
 
 	using = new /atom/movable/screen/mov_intent(null, src)
-	using.icon = ui_style
 	using.icon_state = (owner.move_intent == MOVE_INTENT_RUN ? "running" : "walking")
-	using.screen_loc = ui_movi
+	using.screen_loc = "CENTER+6:16,SOUTH+0:16"
 	static_inventory += using
 
 	inv_box = new /atom/movable/screen/inventory(null, src)
