@@ -30,3 +30,25 @@
 		if(MOVE_INTENT_RUN)
 			icon_state = "running"
 	return ..()
+
+// Health Check Button
+/atom/movable/screen/healthchecker
+	name = "health status"
+	icon = 'icons/hud_atrakor/hud_buttons.dmi'
+	icon_state = "health_off"
+	mouse_over_pointer = MOUSE_HAND_POINTER
+
+/atom/movable/screen/healthchecker/Click()
+	if (iscarbon(usr))
+		var/mob/living/carbon/C = usr
+		C.check_self_for_injuries()
+
+/atom/movable/screen/healthchecker/update_icon_state()
+	var/mob/living/carbon/user = hud?.mymob
+	if(!istype(user))
+		return ..()
+	if(length(user.all_wounds))
+		icon_state = "health_wound"
+	else
+		icon_state = "health_off"
+	return ..()

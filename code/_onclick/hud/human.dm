@@ -125,12 +125,39 @@
 	static_inventory += inv_box
 
 	inv_box = new /atom/movable/screen/inventory(null, src)
-	inv_box.name = "back"
+	inv_box.name = "special"
+	inv_box.icon = 'icons/hud_atrakor/hud_x32.dmi'
+	inv_box.icon_state = "store_spec"
+	inv_box.icon_full = "clothes_full"
+	inv_box.screen_loc = "LEFT+0:16,SOUTH+5:16"
+	inv_box.slot_id = ITEM_SLOT_SPEC_STORAGE
+	static_inventory += inv_box
+
+	inv_box = new /atom/movable/screen/inventory(null, src)
+	inv_box.name = "backpack"
 	inv_box.icon = 'icons/hud_atrakor/hud_x32.dmi'
 	inv_box.icon_state = "store_back"
 	inv_box.icon_full = "clothes_full"
 	inv_box.screen_loc = "LEFT+0:16,SOUTH+6:16"
 	inv_box.slot_id = ITEM_SLOT_BACK
+	static_inventory += inv_box
+
+	inv_box = new /atom/movable/screen/inventory(null, src)
+	inv_box.name = "belt"
+	inv_box.icon = 'icons/hud_atrakor/hud_x32.dmi'
+	inv_box.icon_state = "store_belt"
+	inv_box.icon_full = "clothes_full"
+	inv_box.screen_loc = "LEFT+0:16,SOUTH+7:16"
+	inv_box.slot_id = ITEM_SLOT_BELT_STORAGE
+	static_inventory += inv_box
+
+	inv_box = new /atom/movable/screen/inventory(null, src)
+	inv_box.name = "chest"
+	inv_box.icon = 'icons/hud_atrakor/hud_x32.dmi'
+	inv_box.icon_state = "store_chest"
+	inv_box.icon_full = "clothes_full"
+	inv_box.screen_loc = "LEFT+0:16,SOUTH+8:16"
+	inv_box.slot_id = ITEM_SLOT_CHEST_STORAGE
 	static_inventory += inv_box
 
 	inv_box = new /atom/movable/screen/inventory(null, src)
@@ -241,6 +268,10 @@
 
 	//stamina = new /atom/movable/screen/stamina(null, src)
 	//infodisplay += stamina
+
+	healthbutton = new /atom/movable/screen/healthchecker(null, src)
+	healthbutton.screen_loc = "EAST-1:-16,SOUTH+6"
+	info_display += healthbutton
 
 	pull_icon = new /atom/movable/screen/pull(null, src)
 	pull_icon.screen_loc = "EAST-2:-16,SOUTH+3:16"
