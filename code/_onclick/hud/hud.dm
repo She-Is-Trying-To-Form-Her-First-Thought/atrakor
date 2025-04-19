@@ -440,16 +440,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 		return
 
 /datum/hud/proc/update_ui_style(new_ui_style)
-	// do nothing if overridden by a subtype or already on that style
-	if (initial(ui_style) || ui_style == new_ui_style)
-		return
-
-	for(var/atom/item in static_inventory + toggleable_inventory + hotkeybuttons + infodisplay + always_visible_inventory + inv_slots)
-		if (item.icon == ui_style)
-			item.icon = new_ui_style
-
-	ui_style = new_ui_style
-	build_hand_slots()
+	return // nuh uh uh!
 
 /datum/hud/proc/register_reuse(atom/movable/screen/reuse)
 	asset_refs_for_reuse += WEAKREF(reuse)
@@ -492,7 +483,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	for(var/i in 1 to mymob.held_items.len)
 		hand_box = new /atom/movable/screen/inventory/hand(null, src)
 		hand_box.name = mymob.get_held_index_name(i)
-		hand_box.icon = ui_style
+		hand_box.icon = 'icons/hud_atrakor/hud_x32.dmi'
 		hand_box.icon_state = "hand_[mymob.held_index_to_dir(i)]"
 		hand_box.screen_loc = ui_hand_position(i)
 		hand_box.held_index = i
