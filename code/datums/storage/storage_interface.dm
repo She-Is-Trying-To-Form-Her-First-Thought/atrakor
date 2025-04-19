@@ -65,4 +65,4 @@
 	rowjoin_right.screen_loc = row_right_loc
 	rowjoin_right.alpha = (rows > 1) * 255
 
-	closer.screen_loc = "[screen_start_x + columns]:[screen_pixel_x - 5],[screen_start_y]:[screen_pixel_y]"
+	closer.screen_loc = "[screen_start_x + columns]:[screen_pixel_x],[screen_start_y]:[screen_pixel_y]"
