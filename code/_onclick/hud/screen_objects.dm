@@ -472,7 +472,7 @@
 
 /atom/movable/screen/storage
 	name = "storage"
-	icon = 'icons/hud/screen_midnight.dmi'
+	icon = 'icons/hud_atrakor/hud_x32.dmi'
 	icon_state = "storage_cell"
 	plane = HUD_PLANE
 

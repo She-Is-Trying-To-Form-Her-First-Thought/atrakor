@@ -277,7 +277,7 @@
 	healthbar.screen_loc = "CENTER-1,SOUTH+1:16"
 	infodisplay += healthbar
 
-	stambar = new
+	stambar = new /atom/movable/screen/stambar(null, src)
 	stambar.screen_loc = "CENTER-1,SOUTH+1:16"
 	infodisplay += stambar
 
