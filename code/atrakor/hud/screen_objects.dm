@@ -55,7 +55,7 @@
 
 // Healthbar
 /atom/movable/screen/healthbar
-	name = "overall health"
+	name = "health"
 	icon = 'icons/hud_atrakor/stat_bars_x96.dmi'
 	icon_state = "health_14"
 
@@ -78,9 +78,9 @@
 
 // Stambar
 /atom/movable/screen/stambar
-	name = "overall health"
+	name = "stamina"
 	icon = 'icons/hud_atrakor/stat_bars_x96.dmi'
-	icon_state = "health_14"
+	icon_state = "stam_14"
 
 /atom/movable/screen/stambar/update_icon_state()
 	var/mob/living/carbon/user = hud?.mymob

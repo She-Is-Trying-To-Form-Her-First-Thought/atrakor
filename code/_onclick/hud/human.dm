@@ -274,11 +274,11 @@
 	infodisplay += healthbutton
 
 	healthbar = new /atom/movable/screen/healthbar(null, src)
-	healthbar.screen_loc = "CENTER-1:-16,SOUTH+1:16"
+	healthbar.screen_loc = "CENTER-1,SOUTH+1:16"
 	infodisplay += healthbar
 
 	stambar = new
-	stambar.screen_loc = "CENTER-1:-16,SOUTH+1:16"
+	stambar.screen_loc = "CENTER-1,SOUTH+1:16"
 	infodisplay += stambar
 
 	pull_icon = new /atom/movable/screen/pull(null, src)
