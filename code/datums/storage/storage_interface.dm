@@ -25,7 +25,7 @@
 	rowjoin_left = new(null, null, parent_storage)
 	rowjoin_right = new(null, null, parent_storage)
 	for (var/atom/movable/screen/ui_elem as anything in list_ui_elements())
-		ui_elem.icon = ui_style
+		ui_elem.icon = 'icons/hud_atrakor/hud_x32.dmi'
 
 /// Returns all UI elements under this theme
 /datum/storage_interface/proc/list_ui_elements()
