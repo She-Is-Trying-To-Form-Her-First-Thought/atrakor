@@ -273,6 +273,14 @@
 	healthbutton.screen_loc = "EAST-1:-16,SOUTH+6"
 	infodisplay += healthbutton
 
+	healthbar = new /atom/movable/screen/healthbar(null, src)
+	healthbar.screen_loc = "CENTER-1:-16,SOUTH+1:16"
+	infodisplay += healthbar
+
+	stambar = new
+	stambar.screen_loc = "CENTER-1:-16,SOUTH+1:16"
+	infodisplay += stambar
+
 	pull_icon = new /atom/movable/screen/pull(null, src)
 	pull_icon.screen_loc = "EAST-2:-16,SOUTH+3:16"
 	pull_icon.update_appearance()

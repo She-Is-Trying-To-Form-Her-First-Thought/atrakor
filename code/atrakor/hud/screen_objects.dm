@@ -52,3 +52,43 @@
 	else
 		icon_state = "health_off"
 	return ..()
+
+// Healthbar
+/atom/movable/screen/healthbar
+	name = "overall health"
+	icon = 'icons/hud_atrakor/stat_bars_x96.dmi'
+	icon_state = "health_14"
+
+/atom/movable/screen/healthbar/update_icon_state()
+	var/mob/living/carbon/user = hud?.mymob
+	if(!istype(user))
+		return ..()
+	if(user.health <= HEALTH_THRESHOLD_DEAD)
+		icon_state = "health_dead"
+		return ..()
+	if(user.health <= HEALTH_THRESHOLD_FULLCRIT)
+		icon_state = "health_crit_deep"
+		return ..()
+	if(user.health <= HEALTH_THRESHOLD_CRIT)
+		icon_state = "health_crit"
+		return ..()
+	var/number_of_bars = ceil(user.health / (MAX_LIVING_HEALTH / 14)) // 14 bars in the thing
+	icon_state = "health_[number_of_bars]"
+	return ..()
+
+// Stambar
+/atom/movable/screen/stambar
+	name = "overall health"
+	icon = 'icons/hud_atrakor/stat_bars_x96.dmi'
+	icon_state = "health_14"
+
+/atom/movable/screen/stambar/update_icon_state()
+	var/mob/living/carbon/user = hud?.mymob
+	if(!istype(user))
+		return ..()
+	if(user.staminaloss <= HEALTH_THRESHOLD_CRIT)
+		icon_state = "stam_crit"
+		return ..()
+	var/number_of_bars = ceil(user.health / (MAX_LIVING_HEALTH / 14)) // 14 bars in the thing
+	icon_state = "stam_[number_of_bars]"
+	return ..()

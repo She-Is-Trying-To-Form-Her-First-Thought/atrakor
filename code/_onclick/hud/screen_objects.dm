@@ -398,7 +398,7 @@
 
 /atom/movable/screen/mov_intent
 	name = "run/walk toggle"
-	icon = 'icons/hud_atrakor/hud_x32.dmi'
+	icon = 'icons/hud_atrakor/the_speed_is_a_lot.dmi'
 	icon_state = "running"
 	mouse_over_pointer = MOUSE_HAND_POINTER
 
