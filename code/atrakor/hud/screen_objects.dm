@@ -82,13 +82,13 @@
 	icon = 'icons/hud_atrakor/stat_bars_x96.dmi'
 	icon_state = "stam_14"
 
-/atom/movable/screen/stambar/update_icon_state()
+/atom/movable/screen/stambar/update_icon_state(shown_stamina_loss)
 	var/mob/living/carbon/user = hud?.mymob
 	if(!istype(user))
 		return ..()
-	if(user.staminaloss <= HEALTH_THRESHOLD_CRIT)
+	if(shown_stamina_loss >= HEALTH_THRESHOLD_CRIT)
 		icon_state = "stam_crit"
 		return ..()
-	var/number_of_bars = ceil(user.staminaloss / (MAX_LIVING_HEALTH / 14)) // 14 bars in the thing
+	var/number_of_bars = min(1, ceil((MAX_LIVING_HEALTH - shown_stamina_loss) / (MAX_LIVING_HEALTH / 14))) // 14 bars in the thing
 	icon_state = "stam_[number_of_bars]"
 	return ..()

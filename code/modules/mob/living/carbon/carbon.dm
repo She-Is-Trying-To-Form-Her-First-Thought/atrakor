@@ -809,8 +809,8 @@
 /mob/living/carbon/update_stamina_hud(shown_stamina_loss)
 	if(!client || !hud_used?.stambar)
 		return
-
-	hud_used.stambar.update_appearance()
+	shown_stamina_loss = getStaminaLoss()
+	hud_used.stambar.update_appearance(shown_stamina_loss)
 
 /mob/living/carbon/proc/update_spacesuit_hud_icon(cell_state = "empty")
 	hud_used?.spacesuit?.icon_state = "spacesuit_[cell_state]"
