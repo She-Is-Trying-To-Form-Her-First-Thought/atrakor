@@ -89,7 +89,7 @@
 	inv_box = new /atom/movable/screen/inventory(null, src)
 	inv_box.name = "armor"
 	inv_box.icon = 'icons/hud_atrakor/hud_x32.dmi'
-	inv_box.slot_id = ITEM_SLOT_OCLOTHING
+	inv_box.slot_id = ITEM_SLOT_ARMOR
 	inv_box.icon_state = "vest"
 	inv_box.icon_full = "clothes_full"
 	inv_box.screen_loc = "LEFT+1:16,SOUTH+1:16"
@@ -271,7 +271,7 @@
 
 	healthbutton = new /atom/movable/screen/healthchecker(null, src)
 	healthbutton.screen_loc = "EAST-1:-16,SOUTH+6"
-	info_display += healthbutton
+	infodisplay += healthbutton
 
 	pull_icon = new /atom/movable/screen/pull(null, src)
 	pull_icon.screen_loc = "EAST-2:-16,SOUTH+3:16"
