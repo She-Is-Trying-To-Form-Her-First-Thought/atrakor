@@ -1,0 +1,5 @@
+author: "Paxilmaniac"
+delete-after: True
+changes:
+  - rscadd: "Reconfigures the HUD for use here"
+  - image: "Newly sprited HUD (there's not enough bits and bobs)"
