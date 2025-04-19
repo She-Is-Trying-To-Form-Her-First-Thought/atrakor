@@ -56,6 +56,10 @@
 	var/atom/movable/screen/using
 	var/atom/movable/screen/inventory/inv_box
 
+	using = new /atom/movable/screen/atrakor_background(null, src)
+	using.screen_loc = "WEST+0,SOUTH+0"
+	static_inventory += using
+
 	using = new /atom/movable/screen/language_menu(null, src)
 	using.icon = ui_style
 	using.screen_loc = ui_human_language
