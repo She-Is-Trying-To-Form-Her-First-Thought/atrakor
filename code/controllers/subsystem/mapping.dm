@@ -446,14 +446,6 @@ Used by the AI doomsday and the self-destruct nuke.
 		query_round_map_name.Execute()
 		qdel(query_round_map_name)
 
-#ifndef LOWMEMORYMODE
-
-	if(current_map.minetype == "lavaland")
-		LoadGroup(FailedZs, "Lavaland", "map_files/Mining", "Lavaland.dmm", default_traits = ZTRAITS_LAVALAND)
-	else if (!isnull(current_map.minetype) && current_map.minetype != "none")
-		INIT_ANNOUNCE("WARNING: An unknown minetype '[current_map.minetype]' was set! This is being ignored! Update the maploader code!")
-#endif
-
 	if(LAZYLEN(FailedZs)) //but seriously, unless the server's filesystem is messed up this will never happen
 		var/msg = "RED ALERT! The following map files failed to load: [FailedZs[1]]"
 		if(FailedZs.len > 1)
@@ -511,10 +503,7 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 /datum/controller/subsystem/mapping/proc/preloadRuinTemplates()
 	// Still supporting bans by filename
 	var/list/banned = generateMapList("spaceruinblacklist.txt")
-	if(current_map.minetype == "lavaland")
-		banned += generateMapList("lavaruinblacklist.txt")
-	else if(current_map.blacklist_file)
-		banned += generateMapList(current_map.blacklist_file)
+	banned += generateMapList(current_map.blacklist_file)
 
 	for(var/item in sort_list(subtypesof(/datum/map_template/ruin), GLOBAL_PROC_REF(cmp_ruincost_priority)))
 		var/datum/map_template/ruin/ruin_type = item
