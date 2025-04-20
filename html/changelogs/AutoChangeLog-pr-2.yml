@@ -1,0 +1,4 @@
+author: "Paxilmaniac"
+delete-after: True
+changes:
+  - rscdel: "Deletes most tg maps that we won't be using ever"
