@@ -170,6 +170,10 @@
 #define SPECIES_ZOMBIE_KROKODIL "krokodil_zombie"
 #define SPECIES_VOIDWALKER "voidwalker"
 
+#define SPECIES_TIZIRIAN "tizirian"
+#define SPECIES_TAJARAN "tajaran"
+#define SPECIES_VULPKANIN "vulpkanin"
+
 // Like species IDs, but not specifically attached a species.
 #define BODYPART_ID_ALIEN "alien"
 #define BODYPART_ID_ROBOTIC "robotic"
