@@ -20,6 +20,9 @@
 	category = PREFERENCE_CATEGORY_CLOTHING
 	should_generate_icons = TRUE
 
+/datum/preference/choiced/backpack/has_relevant_feature(datum/preferences/preferences)
+	return FALSE
+
 /datum/preference/choiced/backpack/init_possible_values()
 	return list(
 		GBACKPACK,
@@ -73,6 +76,9 @@
 	main_feature_name = "Jumpsuit"
 	category = PREFERENCE_CATEGORY_CLOTHING
 	should_generate_icons = TRUE
+
+/datum/preference/choiced/jumpsuit/has_relevant_feature(datum/preferences/preferences)
+	return FALSE
 
 /datum/preference/choiced/jumpsuit/init_possible_values()
 	return list(

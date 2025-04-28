@@ -34,6 +34,7 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/digitigrade,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/digitigrade,
 	)
+	fixed_mut_color = null
 
 /datum/species/tizirian/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
@@ -46,7 +47,9 @@
 /datum/species/tizirian/randomize_features()
 	var/list/features = ..()
 	features["lizard_markings"] = pick(SSaccessories.lizard_markings_list)
-	features["mcolor"] = GLOB.color_list_lizard[pick(GLOB.color_list_lizard)]
+	var/new_color = GLOB.color_list_lizard[pick(GLOB.color_list_lizard)]
+	features["mcolor"] = new_color
+	fixed_mut_color = new_color
 	return features
 
 /datum/species/tizirian/get_scream_sound(mob/living/carbon/human/lizard)

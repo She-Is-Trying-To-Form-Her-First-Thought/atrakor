@@ -2027,14 +2027,6 @@ GLOBAL_LIST_EMPTY(blended_hair_icons_cache)
 	name = "Round"
 	icon_state = "round"
 
-/datum/sprite_accessory/snouts/sharplight
-	name = "Sharp + Light"
-	icon_state = "sharplight"
-
-/datum/sprite_accessory/snouts/roundlight
-	name = "Round + Light"
-	icon_state = "roundlight"
-
 /datum/sprite_accessory/horns
 	icon = 'icons/mob/human/species/lizard/lizard_misc.dmi'
 	em_block = TRUE
@@ -2054,10 +2046,6 @@ GLOBAL_LIST_EMPTY(blended_hair_icons_cache)
 /datum/sprite_accessory/horns/ram
 	name = "Ram"
 	icon_state = "ram"
-
-/datum/sprite_accessory/horns/angler
-	name = "Angeler"
-	icon_state = "angler"
 
 /datum/sprite_accessory/ears
 	icon = 'icons/mob/human/cat_features.dmi'

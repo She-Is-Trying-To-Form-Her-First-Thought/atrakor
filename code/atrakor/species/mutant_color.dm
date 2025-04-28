@@ -22,9 +22,8 @@ GLOBAL_LIST_INIT(color_list_lizard, list(
 
 /datum/preference/choiced/species_color/icon_for(value)
 	var/static/datum/universal_icon/scale_base
-	if(isnull(scale_base))
-		scale_base = uni_icon('code/atrakor/species/prefs_icons.dmi', "scale")
-		scale_base.scale(64, 64)
+	scale_base = uni_icon('code/atrakor/species/prefs_icons.dmi', "scale")
+	scale_base.scale(64, 64)
 	var/datum/universal_icon/icon = scale_base.copy()
 	icon.blend_color(GLOB.color_list_lizard[value], ICON_MULTIPLY)
 	return icon
@@ -35,8 +34,9 @@ GLOBAL_LIST_INIT(color_list_lizard, list(
 /datum/preference/choiced/species_color/init_possible_values()
 	return assoc_to_keys(GLOB.color_list_lizard)
 
-/datum/preference/choiced/prisoner_crime/create_default_value()
+/datum/preference/choiced/species_color/create_default_value()
 	return GLOB.color_list_lizard[GLOB.color_list_lizard[1]]
 
 /datum/preference/choiced/species_color/apply_to_human(mob/living/carbon/human/target, value)
 	target.dna.features["mcolor"] = GLOB.color_list_lizard[value]
+	target.dna.species.fixed_mut_color = GLOB.color_list_lizard[value]
