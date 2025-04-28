@@ -18,8 +18,8 @@
 	desc = "A high mounted backpack for the carrying of specialist equipment, mounted the way it is to prevent \
 		interference with movement of the tail and any attached equipment. \
 		This one is white to denote the wearer is an army regular."
-	icon_state = "backpack_levy"
-	worn_icon_state = "backpack_levy"
+	icon_state = "backpack_reg"
+	worn_icon_state = "backpack_reg"
 
 // tailbags
 

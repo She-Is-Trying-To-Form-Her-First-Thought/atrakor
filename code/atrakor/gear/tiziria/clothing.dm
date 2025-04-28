@@ -48,6 +48,7 @@
 	lefthand_file = 'icons/atrakor/generic/lefthand.dmi'
 	righthand_file = 'icons/atrakor/generic/righthand.dmi'
 	inhand_icon_state = null
+	alternate_worn_layer = HANDCUFF_LAYER // above hats for visibility
 
 // neck capes
 
@@ -63,14 +64,14 @@
 	righthand_file = 'icons/atrakor/generic/righthand.dmi'
 	inhand_icon_state = null
 
-/obj/item/clothing/neck/lizard_cape
+/obj/item/clothing/neck/lizard_cape/med
 	name = "scaler's cape"
 	desc = "A deeply purple dyed shoulder cape to denote the wearer is a scaler, Tiziria's own medical corps, \
 		and only sometimes not shot at on the battlefield."
 	icon_state = "cape_med"
 	worn_icon_state = "cape_med"
 
-/obj/item/clothing/neck/lizard_cape
+/obj/item/clothing/neck/lizard_cape/spec
 	name = "claw's cape"
 	desc = "An orange shoulder cape that denotes the user is a claw of the empire, otherwise known as a specialist \
 		of some sort. Typically a sapper, or a radio carrier, but the cape applies to all except medics and leaders."
@@ -120,7 +121,7 @@
 	female_sprite_flags = NO_FEMALE_UNIFORM
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 
-/obj/item/clothing/under/lizard_kilt
+/obj/item/clothing/under/lizard_kilt/white
 	name = "white Tizirian war kilt"
 	desc = "The third best maintained item a Tizirian owns, next to their blades and armor. A relatively simple \
 		looking kilt with a red banner hanging from it's front. Each banner holds a different long string of \
