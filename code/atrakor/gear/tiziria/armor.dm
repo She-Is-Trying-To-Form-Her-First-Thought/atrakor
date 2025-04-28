@@ -64,6 +64,8 @@
 	righthand_file = 'icons/atrakor/generic/righthand.dmi'
 	inhand_icon_state = null
 	fastening_type = SHOES_STRAPS
+	item_flags = IGNORE_DIGITIGRADE
+	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 // gloves
 
