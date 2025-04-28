@@ -1,23 +1,16 @@
 GLOBAL_LIST_INIT(color_list_lizard, list(
-	"Blue" = "#3399ff",
-	"Bright Yellow" = "#ffff99",
-	"Burnt Orange" = "#cc4400",
-	"Cyan Blue" = "#00ffff",
-	"Dark Blue" = "#6666ff",
-	"Dark Fuschia" = "#cc0066",
-	"Dark Green" = "#37835b",
-	"Dark Red" = "#9c3030",
-	"Dull Yellow" = "#fbdf56",
-	"Faint Blue" = "#b3d9ff",
-	"Faint Green" = "#ddff99",
-	"Faint Red" = "#ffb3b3",
-	"Green" = "#97ee63",
-	"Orange" = "#ffa64d",
-	"Pink" = "#ff99cc",
-	"Purple" = "#ee82ee",
-	"Red" = "#ff4d4d",
-	"Seafoam Green" = "#00fa9a",
-	"White" = "#f2f2f2",
+	"Soil" = "#7b695f",
+	"Mud" = "#373333",
+	"Stone" = "#8a8783",
+	"Copper" = "#f0bd84",
+	"Red Dye 40" = "#8a5a64",
+	"Sandy" = "#b9b697",
+	"Water" = "#739794",
+	"Foliage" = "#678064",
+	"Desertification" = "#aea75b",
+	"Silver" = "#c2d4dd",
+	"Mountain" = "#99623a",
+	"Evil" = "#7d393d",
 ))
 
 /datum/preference/choiced/species_color
@@ -25,6 +18,16 @@ GLOBAL_LIST_INIT(color_list_lizard, list(
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_FEATURES
 	main_feature_name = "Species Color"
+	should_generate_icons = TRUE
+
+/datum/preference/choiced/species_color/icon_for(value)
+	var/static/datum/universal_icon/scale_base
+	if(isnull(scale_base))
+		scale_base = uni_icon('code/atrakor/species/prefs_icons.dmi', "scale")
+		scale_base.scale(64, 64)
+	var/datum/universal_icon/icon = scale_base.copy()
+	icon.blend_color(GLOB.color_list_lizard[value], ICON_MULTIPLY)
+	return icon
 
 /datum/preference/choiced/species_color/has_relevant_feature(datum/preferences/preferences)
 	return current_species_has_savekey(preferences)

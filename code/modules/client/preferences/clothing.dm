@@ -102,6 +102,9 @@
 	should_generate_icons = TRUE
 	can_randomize = FALSE
 
+/datum/preference/choiced/socks/has_relevant_feature(datum/preferences/preferences)
+	return FALSE
+
 /datum/preference/choiced/socks/init_possible_values()
 	return assoc_to_keys_features(SSaccessories.socks_list)
 
@@ -130,6 +133,9 @@
 	category = PREFERENCE_CATEGORY_CLOTHING
 	should_generate_icons = TRUE
 	can_randomize = FALSE
+
+/datum/preference/choiced/undershirt/has_relevant_feature(datum/preferences/preferences)
+	return FALSE
 
 /datum/preference/choiced/undershirt/init_possible_values()
 	return assoc_to_keys_features(SSaccessories.undershirt_list)
@@ -179,11 +185,14 @@
 	should_generate_icons = TRUE
 	can_randomize = FALSE
 
+/datum/preference/choiced/underwear/has_relevant_feature(datum/preferences/preferences)
+	return FALSE
+
 /datum/preference/choiced/underwear/init_possible_values()
 	return assoc_to_keys_features(SSaccessories.underwear_list)
 
 /datum/preference/choiced/underwear/create_default_value()
-	return /datum/sprite_accessory/underwear/male_hearts::name
+	return /datum/sprite_accessory/underwear/nude::name
 
 /datum/preference/choiced/underwear/icon_for(value)
 	var/static/datum/universal_icon/lower_half

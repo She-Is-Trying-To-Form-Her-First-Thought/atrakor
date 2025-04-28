@@ -1889,11 +1889,6 @@ GLOBAL_LIST_EMPTY(blended_hair_icons_cache)
 	icon_state = "dtiger"
 	gender_specific = TRUE
 
-/datum/sprite_accessory/lizard_markings/ltiger
-	name = "Light Tiger Body"
-	icon_state = "ltiger"
-	gender_specific = TRUE
-
 /datum/sprite_accessory/lizard_markings/lbelly
 	name = "Light Belly"
 	icon_state = "lbelly"
