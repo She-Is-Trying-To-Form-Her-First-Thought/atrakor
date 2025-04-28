@@ -1935,32 +1935,11 @@ GLOBAL_LIST_EMPTY(blended_hair_icons_cache)
 
 /datum/sprite_accessory/tails/lizard
 	icon = 'icons/mob/human/species/lizard/lizard_tails.dmi'
-	spine_key = SPINE_KEY_LIZARD
+	spine_key = NONE
 
-/datum/sprite_accessory/tails/lizard/none
-	name = SPRITE_ACCESSORY_NONE
-	icon_state = "none"
-	natural_spawn = FALSE
-
-/datum/sprite_accessory/tails/lizard/smooth
-	name = "Smooth"
-	icon_state = "smooth"
-
-/datum/sprite_accessory/tails/lizard/dtiger
-	name = "Dark Tiger"
-	icon_state = "dtiger"
-
-/datum/sprite_accessory/tails/lizard/ltiger
-	name = "Light Tiger"
-	icon_state = "ltiger"
-
-/datum/sprite_accessory/tails/lizard/spikes
-	name = "Spikes"
-	icon_state = "spikes"
-
-/datum/sprite_accessory/tails/lizard/short
-	name = "Short"
-	icon_state = "short"
+/datum/sprite_accessory/tails/lizard/fat
+	name = "Fat"
+	icon_state = "fat"
 	spine_key = NONE
 
 /datum/sprite_accessory/tails/felinid/cat

@@ -4,6 +4,7 @@
 	id = SPECIES_TIZIRIAN
 	inherent_traits = list(
 		TRAIT_MUTANT_COLORS,
+		TRAIT_FIXED_MUTANT_COLORS,
 	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
 	body_markings = list(
@@ -11,10 +12,8 @@
 	)
 	mutant_organs = list(
 		/obj/item/organ/horns = SPRITE_ACCESSORY_NONE,
-		/obj/item/organ/frills = SPRITE_ACCESSORY_NONE,
 		/obj/item/organ/snout = "Round",
-		/obj/item/organ/spines = SPRITE_ACCESSORY_NONE,
-		/obj/item/organ/tail/lizard = "Smooth",
+		/obj/item/organ/tail/lizard = "Fat",
 	)
 	mutanttongue = /obj/item/organ/tongue/lizard
 	mutanteyes = /obj/item/organ/eyes/lizard
@@ -36,9 +35,18 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/digitigrade,
 	)
 
+/datum/species/tizirian/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons)
+	. = ..()
+
+/datum/species/tizirian/get_features()
+	var/list/features = ..()
+	features += "feature_speciescolor"
+	return features
+
 /datum/species/tizirian/randomize_features()
 	var/list/features = ..()
 	features["lizard_markings"] = pick(SSaccessories.lizard_markings_list)
+	features["mcolor"] = GLOB.color_list_lizard[pick(GLOB.color_list_lizard)]
 	return features
 
 /datum/species/tizirian/get_scream_sound(mob/living/carbon/human/lizard)

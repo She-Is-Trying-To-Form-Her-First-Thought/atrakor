@@ -172,4 +172,4 @@
 	target.dna.features["tail_lizard"] = value
 
 /datum/preference/choiced/lizard_tail/create_default_value()
-	return /datum/sprite_accessory/tails/lizard/smooth::name
+	return /datum/sprite_accessory/tails/lizard/fat::name
