@@ -6,14 +6,14 @@
 	randomize_by_default = FALSE
 
 /datum/preference/choiced/species/deserialize(input, datum/preferences/preferences)
-	return GLOB.species_list[sanitize_inlist(input, get_choices_serialized(), SPECIES_HUMAN)]
+	return GLOB.species_list[sanitize_inlist(input, get_choices_serialized(), SPECIES_TIZIRIAN)]
 
 /datum/preference/choiced/species/serialize(input)
 	var/datum/species/species = input
 	return initial(species.id)
 
 /datum/preference/choiced/species/create_default_value()
-	return /datum/species/human
+	return /datum/species/tizirian
 
 /datum/preference/choiced/species/create_random_value(datum/preferences/preferences)
 	return pick(get_choices())

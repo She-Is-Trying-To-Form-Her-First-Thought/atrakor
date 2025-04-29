@@ -34,8 +34,14 @@ GLOBAL_LIST_INIT(color_list_lizard, list(
 /datum/preference/choiced/species_color/init_possible_values()
 	return assoc_to_keys(GLOB.color_list_lizard)
 
+/datum/preference/choiced/species_color/is_valid(value)
+	return TRUE // idec brah
+
 /datum/preference/choiced/species_color/create_default_value()
 	return GLOB.color_list_lizard[GLOB.color_list_lizard[1]]
+
+/datum/preference/choiced/species_color/create_random_value(datum/preferences/preferences)
+	return GLOB.color_list_lizard[pick(GLOB.color_list_lizard)]
 
 /datum/preference/choiced/species_color/apply_to_human(mob/living/carbon/human/target, value)
 	target.dna.features["mcolor"] = GLOB.color_list_lizard[value]
