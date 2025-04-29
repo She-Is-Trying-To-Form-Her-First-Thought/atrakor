@@ -1,7 +1,7 @@
-/datum/species/tajaran
-	name = "\improper Tajaran"
-	plural_form = "Tajaran"
-	id = SPECIES_TAJARAN
+/datum/species/vulpkanin
+	name = "\improper Vulpkanin"
+	plural_form = "Vulpkanin"
+	id = SPECIES_VULPKANIN
 	inherent_traits = list(
 		TRAIT_MUTANT_COLORS,
 		TRAIT_FIXED_MUTANT_COLORS,
@@ -11,12 +11,12 @@
 		/datum/bodypart_overlay/simple/body_marking/lizard = SPRITE_ACCESSORY_NONE,
 	)
 	mutant_organs = list(
-		/obj/item/organ/snout/tajaran = "Sharp",
+		/obj/item/organ/snout/vulpkanin = "Sharp",
 		/obj/item/organ/tail/fluffy = "Big",
 		/obj/item/organ/tail/cat = "Cat",
 	)
 	mutantears = /obj/item/organ/ears/cat
-	mutanttongue = /obj/item/organ/tongue/cat
+	mutanttongue = /obj/item/organ/tongue
 	mutanteyes = /obj/item/organ/eyes
 	payday_modifier = 1.0
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
@@ -27,24 +27,24 @@
 	species_language_holder = /datum/language_holder/human_basic
 	digitigrade_customization = DIGITIGRADE_NEVER
 	bodypart_overrides = list(
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/tajaran,
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/tajaran,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/tajaran,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/tajaran,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/digitigrade/tajaran,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/digitigrade/tajaran,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/vulpkanin,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/vulpkanin,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/vulpkanin,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/vulpkanin,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/digitigrade/vulpkanin,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/digitigrade/vulpkanin,
 	)
 	fixed_mut_color = null
 
-/datum/species/tajaran/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons)
+/datum/species/vulpkanin/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
 
-/datum/species/tajaran/get_features()
+/datum/species/vulpkanin/get_features()
 	var/list/features = ..()
 	features += "feature_speciescolor"
 	return features
 
-/datum/species/tajaran/randomize_features()
+/datum/species/vulpkanin/randomize_features()
 	var/list/features = ..()
 	features["lizard_markings"] = pick(SSaccessories.lizard_markings_list)
 	var/new_color = GLOB.color_list_lizard[pick(GLOB.color_list_lizard)]
@@ -52,14 +52,14 @@
 	fixed_mut_color = new_color
 	return features
 
-/datum/species/tajaran/get_scream_sound(mob/living/carbon/human/lizard)
+/datum/species/vulpkanin/get_scream_sound(mob/living/carbon/human/lizard)
 	return pick(
 		'sound/mobs/humanoids/lizard/lizard_scream_1.ogg',
 		'sound/mobs/humanoids/lizard/lizard_scream_2.ogg',
 		'sound/mobs/humanoids/lizard/lizard_scream_3.ogg',
 	)
 
-/datum/species/tajaran/get_cough_sound(mob/living/carbon/human/lizard)
+/datum/species/vulpkanin/get_cough_sound(mob/living/carbon/human/lizard)
 	if(lizard.physique == FEMALE)
 		return pick(
 			'sound/mobs/humanoids/human/cough/female_cough1.ogg',
@@ -79,7 +79,7 @@
 	)
 
 
-/datum/species/tajaran/get_cry_sound(mob/living/carbon/human/lizard)
+/datum/species/vulpkanin/get_cry_sound(mob/living/carbon/human/lizard)
 	if(lizard.physique == FEMALE)
 		return pick(
 			'sound/mobs/humanoids/human/cry/female_cry1.ogg',
@@ -92,43 +92,43 @@
 	)
 
 
-/datum/species/tajaran/get_sneeze_sound(mob/living/carbon/human/lizard)
+/datum/species/vulpkanin/get_sneeze_sound(mob/living/carbon/human/lizard)
 	if(lizard.physique == FEMALE)
 		return 'sound/mobs/humanoids/human/sneeze/female_sneeze1.ogg'
 	return 'sound/mobs/humanoids/human/sneeze/male_sneeze1.ogg'
 
-/datum/species/tajaran/get_laugh_sound(mob/living/carbon/human/lizard)
+/datum/species/vulpkanin/get_laugh_sound(mob/living/carbon/human/lizard)
 	return 'sound/mobs/humanoids/lizard/lizard_laugh1.ogg'
 
-/datum/species/tajaran/get_sigh_sound(mob/living/carbon/human/lizard)
+/datum/species/vulpkanin/get_sigh_sound(mob/living/carbon/human/lizard)
 	if(lizard.physique == FEMALE)
 		return SFX_FEMALE_SIGH
 	return SFX_MALE_SIGH
 
-/datum/species/tajaran/get_sniff_sound(mob/living/carbon/human/lizard)
+/datum/species/vulpkanin/get_sniff_sound(mob/living/carbon/human/lizard)
 	if(lizard.physique == FEMALE)
 		return 'sound/mobs/humanoids/human/sniff/female_sniff.ogg'
 	return 'sound/mobs/humanoids/human/sniff/male_sniff.ogg'
 
-/datum/species/tajaran/get_snore_sound(mob/living/carbon/human/lizard)
+/datum/species/vulpkanin/get_snore_sound(mob/living/carbon/human/lizard)
 	if(lizard.physique == FEMALE)
 		return SFX_SNORE_FEMALE
 	return SFX_SNORE_MALE
 
-/datum/species/tajaran/get_hiss_sound(mob/living/carbon/human/lizard)
+/datum/species/vulpkanin/get_hiss_sound(mob/living/carbon/human/lizard)
 	return 'sound/mobs/humanoids/lizard/lizard_hiss.ogg'
 
-/datum/species/tajaran/get_physical_attributes()
+/datum/species/vulpkanin/get_physical_attributes()
 	return "Lizardpeople can withstand slightly higher temperatures than most species, but they are very vulnerable to the cold \
 		and can't regulate their body-temperature internally, making the vacuum of space extremely deadly to them."
 
-/datum/species/tajaran/get_species_description()
+/datum/species/vulpkanin/get_species_description()
 	return "The militaristic Lizardpeople hail originally from Tizira, but have grown \
 		throughout their centuries in the stars to possess a large spacefaring \
 		empire: though now they must contend with their younger, more \
 		technologically advanced Human neighbours."
 
-/datum/species/tajaran/get_species_lore()
+/datum/species/vulpkanin/get_species_lore()
 	return list(
 		"The face of conspiracy theory was changed forever the day mankind met the lizards.",
 
@@ -148,7 +148,7 @@
 	)
 
 // Override for the default temperature perks, so we can give our specific "cold blooded" perk.
-/datum/species/tajaran/create_pref_temperature_perks()
+/datum/species/vulpkanin/create_pref_temperature_perks()
 	var/list/to_add = list()
 
 	to_add += list(list(

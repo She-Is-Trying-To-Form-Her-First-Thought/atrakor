@@ -640,6 +640,7 @@
 #include "code\atrakor\species\tajaran.dm"
 #include "code\atrakor\species\tizirian.dm"
 #include "code\atrakor\species\vulp_bodyparts.dm"
+#include "code\atrakor\species\vulpkanin.dm"
 #include "code\controllers\admin.dm"
 #include "code\controllers\controller.dm"
 #include "code\controllers\failsafe.dm"

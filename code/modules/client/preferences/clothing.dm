@@ -154,7 +154,7 @@
 		if(MALE)
 			return /datum/sprite_accessory/undershirt/nude::name
 		if(FEMALE)
-			return /datum/sprite_accessory/undershirt/sports_bra::name
+			return /datum/sprite_accessory/undershirt/nude::name
 
 	return ..()
 

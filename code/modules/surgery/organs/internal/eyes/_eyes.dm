@@ -1072,7 +1072,7 @@
 	name = "reptile eyes"
 	desc = "A pair of reptile eyes with thin vertical slits for pupils."
 	icon_state = "lizard_eyes"
-	synchronized_blinking = FALSE
+	blink_animation = FALSE // freak
 
 /obj/item/organ/eyes/night_vision/maintenance_adapted
 	name = "adapted eyes"

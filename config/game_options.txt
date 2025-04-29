@@ -387,6 +387,7 @@ SILICON_MAX_LAW_AMOUNT 12
 ## ATRAKOR SPECIES
 ROUNDSTART_RACES tizirian
 ROUNDSTART_RACES tajaran
+ROUNDSTART_RACES vulpkanin
 
 ##-------------------------------------------------------------------------------------------
 

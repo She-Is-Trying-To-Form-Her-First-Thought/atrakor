@@ -47,6 +47,10 @@
 /datum/species/tizirian/randomize_features()
 	var/list/features = ..()
 	features["lizard_markings"] = pick(SSaccessories.lizard_markings_list)
+	var/new_color = GLOB.color_list_lizard[pick(GLOB.color_list_lizard)]
+	features["mcolor"] = new_color
+	fixed_mut_color = new_color
+
 	return features
 
 /datum/species/tizirian/get_scream_sound(mob/living/carbon/human/lizard)
