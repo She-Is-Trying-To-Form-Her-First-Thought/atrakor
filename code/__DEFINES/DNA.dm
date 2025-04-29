@@ -61,6 +61,9 @@
 #define DNA_MUSHROOM_CAPS_BLOCK 14
 #define DNA_POD_HAIR_BLOCK 15
 #define DNA_FISH_TAIL_BLOCK 16
+#define DNA_SNOUT_BLOCK_TAJ 17
+#define DNA_SNOUT_BLOCK_VULP 18
+#define DNA_TAIL_BLOCK_FURRY 19
 
 // Hey! Listen up if you're here because you're adding a species feature!
 //
@@ -69,7 +72,7 @@
 // (Which means having a DNA block for a feature tied to a mob without DNA is entirely pointless.)
 
 /// Total amount of DNA blocks, must be equal to the highest DNA block number
-#define DNA_FEATURE_BLOCKS 16
+#define DNA_FEATURE_BLOCKS 19
 
 #define DNA_SEQUENCE_LENGTH 4
 #define DNA_MUTATION_BLOCKS 8

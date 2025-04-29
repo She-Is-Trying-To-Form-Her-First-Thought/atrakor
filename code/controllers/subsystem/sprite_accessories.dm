@@ -38,6 +38,8 @@ SUBSYSTEM_DEF(accessories) // just 'accessories' for brevity
 	//Lizard Bits (all datum lists indexed by name)
 	var/list/lizard_markings_list
 	var/list/snouts_list
+	var/list/snouts_list_taj
+	var/list/snouts_list_vulp
 	var/list/horns_list
 	var/list/frills_list
 	var/list/spines_list
@@ -49,6 +51,7 @@ SUBSYSTEM_DEF(accessories) // just 'accessories' for brevity
 	var/list/tails_list_monkey
 	var/list/tails_list_xeno
 	var/list/tails_list_fish
+	var/list/tails_list_furry
 	var/list/ears_list
 	var/list/wings_list
 	var/list/wings_open_list
@@ -97,7 +100,10 @@ SUBSYSTEM_DEF(accessories) // just 'accessories' for brevity
 	tails_list_xeno = init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/xeno)[DEFAULT_SPRITE_LIST]
 	//tails fo fish organ infusions, not for prefs.
 	tails_list_fish = init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/fish)[DEFAULT_SPRITE_LIST]
+	tails_list_furry = init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/furry)[DEFAULT_SPRITE_LIST]
 	snouts_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/snouts)[DEFAULT_SPRITE_LIST]
+	snouts_list_taj = init_sprite_accessory_subtypes(/datum/sprite_accessory/snouts_taj)[DEFAULT_SPRITE_LIST]
+	snouts_list_vulp = init_sprite_accessory_subtypes(/datum/sprite_accessory/snouts_vulp)[DEFAULT_SPRITE_LIST]
 	horns_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/horns, add_blank = TRUE)[DEFAULT_SPRITE_LIST]
 	ears_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/ears, add_blank = TRUE)[DEFAULT_SPRITE_LIST]
 	wings_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/wings, add_blank = TRUE)[DEFAULT_SPRITE_LIST]

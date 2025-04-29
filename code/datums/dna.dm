@@ -229,6 +229,10 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 		L[DNA_LIZARD_TAIL_BLOCK] = construct_block(SSaccessories.tails_list_lizard.Find(features["tail_lizard"]), length(SSaccessories.tails_list_lizard))
 	if(features["snout"])
 		L[DNA_SNOUT_BLOCK] = construct_block(SSaccessories.snouts_list.Find(features["snout"]), length(SSaccessories.snouts_list))
+	if(features["snout_taj"])
+		L[DNA_SNOUT_BLOCK_TAJ] = construct_block(SSaccessories.snouts_list.Find(features["snout_taj"]), length(SSaccessories.snouts_list_taj))
+	if(features["snout_vulp"])
+		L[DNA_SNOUT_BLOCK_VULP] = construct_block(SSaccessories.snouts_list.Find(features["snout_vulp"]), length(SSaccessories.snouts_list_vulp))
 	if(features["horns"])
 		L[DNA_HORNS_BLOCK] = construct_block(SSaccessories.horns_list.Find(features["horns"]), length(SSaccessories.horns_list))
 	if(features["frills"])
@@ -249,6 +253,8 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 		L[DNA_POD_HAIR_BLOCK] = construct_block(SSaccessories.pod_hair_list.Find(features["pod_hair"]), length(SSaccessories.pod_hair_list))
 	if(features["fish_tail"])
 		L[DNA_FISH_TAIL_BLOCK] = construct_block(SSaccessories.tails_list_fish.Find(features["fish_tail"]), length(SSaccessories.tails_list_fish))
+	if(features["furry_tail"])
+		L[DNA_TAIL_BLOCK_FURRY] = construct_block(SSaccessories.tails_list_fish.Find(features["furry_tail"]), length(SSaccessories.tails_list_furry))
 
 	for(var/blocknum in 1 to DNA_FEATURE_BLOCKS)
 		. += L[blocknum] || random_string(GET_UI_BLOCK_LEN(blocknum), GLOB.hex_characters)
@@ -697,6 +703,12 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 		dna.features["pod_hair"] = SSaccessories.pod_hair_list[deconstruct_block(get_uni_feature_block(features, DNA_POD_HAIR_BLOCK), length(SSaccessories.pod_hair_list))]
 	if(dna.features["fish_tail"])
 		dna.features["fish_tail"] = SSaccessories.tails_list_fish[deconstruct_block(get_uni_feature_block(features, DNA_FISH_TAIL_BLOCK), length(SSaccessories.tails_list_fish))]
+	if(dna.features["furry_tail"])
+		dna.features["furry_tail"] = SSaccessories.tails_list_furry[deconstruct_block(get_uni_feature_block(features, DNA_TAIL_BLOCK_FURRY), length(SSaccessories.tails_list_furry))]
+	if(dna.features["snout_taj"])
+		dna.features["snout_taj"] = SSaccessories.snouts_list_taj[deconstruct_block(get_uni_feature_block(features, DNA_FISH_TAIL_BLOCK), length(SSaccessories.snouts_list_taj))]
+	if(dna.features["snout_vulp"])
+		dna.features["snout_vulp"] = SSaccessories.snouts_list_vulp[deconstruct_block(get_uni_feature_block(features, DNA_FISH_TAIL_BLOCK), length(SSaccessories.snouts_list_vulp))]
 
 	for(var/obj/item/organ/organ in organs)
 		organ.mutate_feature(features, src)
