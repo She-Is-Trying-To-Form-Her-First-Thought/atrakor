@@ -36,9 +36,12 @@
 	fixed_mut_color = null
 	no_equip_flags = ITEM_SLOT_SPEC_STORAGE
 	preview_outfit = /datum/outfit/vulpkanin_preview
+	hair_color_mode = USE_FIXED_MUTANT_COLOR
 
 /datum/species/vulpkanin/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons)
-	. = ..()
+	var/obj/item/organ/ears/cat/ears = new(FALSE, target_human.dna.features["ears"])
+	ears.Insert(target_human, movement_flags = DELETE_IF_REPLACED)
+	return ..()
 
 /datum/species/vulpkanin/get_features()
 	var/list/features = ..()
@@ -152,10 +155,11 @@
 	name = "Carcajoulein (PREVIEW)"
 	head = /obj/item/clothing/head/vulp_helmet
 	armor = /obj/item/clothing/armor_slot/vulp
-	glasses = /obj/item/clothing/glasses/tajaran_hud
+	glasses = /obj/item/clothing/glasses/vulp_hud
 	suit = /obj/item/clothing/suit/vulp_cloak
 
 /datum/species/vulpkanin/prepare_human_for_preview(mob/living/carbon/human/lizard_for_preview)
 	lizard_for_preview.dna.features["mcolor"] = "#8a8783"
+	lizard_for_preview.dna.species.fixed_mut_color = "#8a8783"
 	regenerate_organs(lizard_for_preview)
 	lizard_for_preview.update_body(is_creating = TRUE)

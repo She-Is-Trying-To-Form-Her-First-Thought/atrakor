@@ -25,9 +25,9 @@
 	desc = "A strong and simple helmet. Taking design notes from the Tizirians, the front is strongly angled to \
 		give a much greater chance at glancing blows. Different, however, is the much more open air and artistic design."
 	icon = 'icons/atrakor/vulp/gear.dmi'
-	icon_state = "flophelmet"
+	icon_state = "skirmisher"
 	worn_icon = 'icons/atrakor/vulp/gear_worn.dmi'
-	worn_icon_state = "flophelmet"
+	worn_icon_state = "skirmisher"
 	lefthand_file = 'icons/atrakor/generic/lefthand.dmi'
 	righthand_file = 'icons/atrakor/generic/righthand.dmi'
 	inhand_icon_state = null

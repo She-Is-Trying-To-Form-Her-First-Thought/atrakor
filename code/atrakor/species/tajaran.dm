@@ -36,9 +36,12 @@
 	fixed_mut_color = null
 	no_equip_flags = ITEM_SLOT_SPEC_STORAGE
 	preview_outfit = /datum/outfit/tajaran_preview
+	hair_color_mode = USE_FIXED_MUTANT_COLOR
 
 /datum/species/tajaran/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons)
-	. = ..()
+	var/obj/item/organ/ears/cat/ears = new(FALSE, target_human.dna.features["ears"])
+	ears.Insert(target_human, movement_flags = DELETE_IF_REPLACED)
+	return ..()
 
 /datum/species/tajaran/get_features()
 	var/list/features = ..()
@@ -158,6 +161,7 @@
 
 /datum/species/tajaran/prepare_human_for_preview(mob/living/carbon/human/lizard_for_preview)
 	lizard_for_preview.dna.features["mcolor"] = "#b9b697"
+	lizard_for_preview.dna.species.fixed_mut_color = "#b9b697"
 	lizard_for_preview.dna.features["ears"] = "Coeurl"
 	lizard_for_preview.dna.features["lizard_markings"] = "Dark Tiger Body"
 	regenerate_organs(lizard_for_preview)
