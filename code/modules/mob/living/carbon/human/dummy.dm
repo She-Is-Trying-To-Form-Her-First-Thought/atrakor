@@ -104,7 +104,7 @@ INITIALIZE_IMMEDIATE(/mob/living/carbon/human/dummy)
 	return consistent_entry
 
 /proc/create_consistent_human_dna(mob/living/carbon/human/target)
-	target.dna.features["mcolor"] = COLOR_VIBRANT_LIME
+	target.dna.features["mcolor"] = "#373333"
 	target.dna.features["ethcolor"] = COLOR_WHITE
 	target.dna.features["lizard_markings"] = get_consistent_feature_entry(SSaccessories.lizard_markings_list)
 	target.dna.features["ears"] = get_consistent_feature_entry(SSaccessories.ears_list)

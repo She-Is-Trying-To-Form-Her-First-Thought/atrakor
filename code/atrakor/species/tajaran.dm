@@ -14,7 +14,6 @@
 	mutant_organs = list(
 		/obj/item/organ/snout/tajaran = "Sharp",
 		/obj/item/organ/tail/fluffy = "Big",
-		/obj/item/organ/ears/cat = "Coeurl"
 	)
 	mutantears = /obj/item/organ/ears/cat
 	mutanttongue = /obj/item/organ/tongue/cat

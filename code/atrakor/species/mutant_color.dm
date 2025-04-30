@@ -47,3 +47,4 @@ GLOBAL_LIST_INIT(color_list_lizard, list(
 /datum/preference/choiced/species_color/apply_to_human(mob/living/carbon/human/target, value)
 	target.dna.features["mcolor"] = GLOB.color_list_lizard[value]
 	target.dna.species.fixed_mut_color = GLOB.color_list_lizard[value]
+	target.update_body(is_creating = TRUE)
