@@ -1,6 +1,6 @@
 /datum/species/tajaran
-	name = "\improper Tajaran"
-	plural_form = "Tajaran"
+	name = "\improper Kusingilla"
+	plural_form = "Kusingillen"
 	id = SPECIES_TAJARAN
 	inherent_traits = list(
 		TRAIT_MUTANT_COLORS,
@@ -35,6 +35,8 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/digitigrade/tajaran,
 	)
 	fixed_mut_color = null
+	no_equip_flags = ITEM_SLOT_SPEC_STORAGE
+	preview_outfit = /datum/outfit/tajaran_preview
 
 /datum/species/tajaran/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
@@ -147,17 +149,17 @@
 		Roles range from combat to civil service and everything in between. As the old slogan goes: \"Your place will be found!\"",
 	)
 
-// Override for the default temperature perks, so we can give our specific "cold blooded" perk.
-/datum/species/tajaran/create_pref_temperature_perks()
-	var/list/to_add = list()
+/datum/outfit/tajaran_preview
+	name = "Kusingillen (PREVIEW)"
+	head = /obj/item/clothing/head/tajaran_hat
+	glasses = /obj/item/clothing/glasses/tajaran_hud
+	neck = /obj/item/clothing/neck/tajaran_cape
+	armor = /obj/item/clothing/armor_slot/tajaran/gold
+	suit = /obj/item/clothing/suit/tajaran_dressing
 
-	to_add += list(list(
-		SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
-		SPECIES_PERK_ICON = "thermometer-empty",
-		SPECIES_PERK_NAME = "Cold-blooded",
-		SPECIES_PERK_DESC = "Lizardpeople have higher tolerance for hot temperatures, but lower \
-			tolerance for cold temperatures. Additionally, they cannot self-regulate their body temperature - \
-			they are as cold or as warm as the environment around them is. Stay warm!",
-	))
-
-	return to_add
+/datum/species/tajaran/prepare_human_for_preview(mob/living/carbon/human/lizard_for_preview)
+	lizard_for_preview.dna.features["mcolor"] = "#b9b697"
+	lizard_for_preview.dna.features["ears"] = "Coeurl"
+	lizard_for_preview.dna.features["lizard_markings"] = "Dark Tiger Body"
+	regenerate_organs(lizard_for_preview)
+	lizard_for_preview.update_body(is_creating = TRUE)

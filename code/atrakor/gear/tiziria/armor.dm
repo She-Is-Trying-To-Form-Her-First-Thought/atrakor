@@ -21,6 +21,7 @@
 		and is tan to denote the owner is a conscripted levy."
 	icon_state = "halo_two_levy"
 	worn_icon_state = "halo_two_levy"
+	flags_cover = HEADCOVERSEYES
 
 /obj/item/clothing/head/lizard_helmet/white
 	name = "white Tizirian helmet"
@@ -38,6 +39,7 @@
 		and is white to denote the owner is an army regular."
 	icon_state = "halo_two_reg"
 	worn_icon_state = "halo_two_reg"
+	flags_cover = HEADCOVERSEYES
 
 // armor vest
 

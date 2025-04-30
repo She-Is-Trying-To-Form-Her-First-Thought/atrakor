@@ -1,6 +1,6 @@
 /datum/species/vulpkanin
-	name = "\improper Vulpkanin"
-	plural_form = "Vulpkanin"
+	name = "\improper Carcajoule"
+	plural_form = "Carcajoulein"
 	id = SPECIES_VULPKANIN
 	inherent_traits = list(
 		TRAIT_MUTANT_COLORS,
@@ -13,7 +13,6 @@
 	mutant_organs = list(
 		/obj/item/organ/snout/vulpkanin = "Sharp",
 		/obj/item/organ/tail/fluffy = "Big",
-		/obj/item/organ/tail/cat = "Cat",
 	)
 	mutantears = /obj/item/organ/ears/cat
 	mutanttongue = /obj/item/organ/tongue
@@ -35,6 +34,8 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/digitigrade/vulpkanin,
 	)
 	fixed_mut_color = null
+	no_equip_flags = ITEM_SLOT_SPEC_STORAGE
+	preview_outfit = /datum/outfit/vulpkanin_preview
 
 /datum/species/vulpkanin/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
@@ -147,17 +148,14 @@
 		Roles range from combat to civil service and everything in between. As the old slogan goes: \"Your place will be found!\"",
 	)
 
-// Override for the default temperature perks, so we can give our specific "cold blooded" perk.
-/datum/species/vulpkanin/create_pref_temperature_perks()
-	var/list/to_add = list()
+/datum/outfit/vulpkanin_preview
+	name = "Carcajoulein (PREVIEW)"
+	head = /obj/item/clothing/head/vulp_helmet
+	armor = /obj/item/clothing/armor_slot/vulp
+	glasses = /obj/item/clothing/glasses/tajaran_hud
+	suit = /obj/item/clothing/suit/vulp_cloak
 
-	to_add += list(list(
-		SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
-		SPECIES_PERK_ICON = "thermometer-empty",
-		SPECIES_PERK_NAME = "Cold-blooded",
-		SPECIES_PERK_DESC = "Lizardpeople have higher tolerance for hot temperatures, but lower \
-			tolerance for cold temperatures. Additionally, they cannot self-regulate their body temperature - \
-			they are as cold or as warm as the environment around them is. Stay warm!",
-	))
-
-	return to_add
+/datum/species/vulpkanin/prepare_human_for_preview(mob/living/carbon/human/lizard_for_preview)
+	lizard_for_preview.dna.features["mcolor"] = "#8a8783"
+	regenerate_organs(lizard_for_preview)
+	lizard_for_preview.update_body(is_creating = TRUE)

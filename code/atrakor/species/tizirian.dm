@@ -35,6 +35,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/digitigrade,
 	)
 	fixed_mut_color = null
+	preview_outfit = /datum/outfit/tizirian_preview
 
 /datum/species/tizirian/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
@@ -148,17 +149,17 @@
 		Roles range from combat to civil service and everything in between. As the old slogan goes: \"Your place will be found!\"",
 	)
 
-// Override for the default temperature perks, so we can give our specific "cold blooded" perk.
-/datum/species/tizirian/create_pref_temperature_perks()
-	var/list/to_add = list()
+/datum/outfit/tizirian_preview
+	name = "Tizirian (PREVIEW)"
+	head = /obj/item/clothing/head/lizard_hat/white
+	glasses = /obj/item/clothing/glasses/lizard_hud
+	ears = /obj/item/clothing/ears/lizard_tag
+	neck = /obj/item/clothing/neck/lizard_cape
+	armor = /obj/item/clothing/armor_slot/lizard
 
-	to_add += list(list(
-		SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
-		SPECIES_PERK_ICON = "thermometer-empty",
-		SPECIES_PERK_NAME = "Cold-blooded",
-		SPECIES_PERK_DESC = "Lizardpeople have higher tolerance for hot temperatures, but lower \
-			tolerance for cold temperatures. Additionally, they cannot self-regulate their body temperature - \
-			they are as cold or as warm as the environment around them is. Stay warm!",
-	))
-
-	return to_add
+/datum/species/tizirian/prepare_human_for_preview(mob/living/carbon/human/lizard_for_preview)
+	lizard_for_preview.dna.features["mcolor"] = "#7b695f"
+	lizard_for_preview.dna.features["horns"] = "Curled"
+	lizard_for_preview.dna.features["lizard_markings"] = "Dark Tiger Body"
+	regenerate_organs(lizard_for_preview)
+	lizard_for_preview.update_body(is_creating = TRUE)

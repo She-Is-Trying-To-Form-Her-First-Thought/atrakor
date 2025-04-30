@@ -34,6 +34,7 @@
 	lefthand_file = 'icons/atrakor/generic/lefthand.dmi'
 	righthand_file = 'icons/atrakor/generic/righthand.dmi'
 	inhand_icon_state = null
+	flags_cover = GLASSESCOVERSEYES
 
 // ear tag
 

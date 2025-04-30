@@ -133,7 +133,10 @@ GLOBAL_LIST_INIT(turfs_pass_meteor, typecacheof(list(
 #define ismonkey(A) (is_species(A, /datum/species/monkey))
 #define isandroid(A) (is_species(A, /datum/species/android))
 #define isnightmare(A) (is_species(A, /datum/species/shadow/nightmare))
-
+#define istizirian(A) (is_species(A, /datum/species/tizirian))
+#define isvulpkanin(A) (is_species(A, /datum/species/vulpkanin))
+#define istajaran(A) (is_species(A, /datum/species/tajaran))
+#define iscoalition(A) (istype(A, /datum/species/tajaran) || istype(A, /datum/species/vulpkanin))
 
 //More carbon mobs
 #define isalien(A) (istype(A, /mob/living/carbon/alien))

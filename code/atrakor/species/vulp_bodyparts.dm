@@ -2,7 +2,7 @@
 	icon_greyscale = 'code/atrakor/species/anthro_body/body.dmi'
 	limb_id = BODYPART_ID_ANTHRO
 	is_dimorphic = FALSE
-	head_flags = HEAD_LIPS|HEAD_EYESPRITES|HEAD_EYECOLOR|HEAD_EYEHOLES|HEAD_DEBRAIN
+	head_flags = HEAD_HAIR|HEAD_LIPS|HEAD_EYESPRITES|HEAD_EYECOLOR
 	teeth_count = 42
 
 /obj/item/bodypart/chest/vulpkanin

@@ -180,6 +180,9 @@ GLOBAL_LIST_EMPTY(features_by_species)
 	///A list containing outfits that will be overridden in the species_equip_outfit proc. [Key = Typepath passed in] [Value = Typepath of outfit you want to equip for this specific species instead].
 	var/list/outfit_override_registry = list()
 
+	/// outfit to equip in species preview
+	var/datum/outfit/preview_outfit = null
+
 ///////////
 // PROCS //
 ///////////
