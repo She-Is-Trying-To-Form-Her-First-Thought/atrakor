@@ -39,5 +39,8 @@
 /datum/preference/choiced/felinid_ears/apply_to_human(mob/living/carbon/human/target, value)
 	target.dna.features["ears"] = value
 
+/datum/preference/choiced/felinid_ears/create_random_value(datum/preferences/preferences)
+	return pick(cached_values)
+
 /datum/preference/choiced/felinid_ears/create_default_value()
 	return /datum/sprite_accessory/ears/cat::name

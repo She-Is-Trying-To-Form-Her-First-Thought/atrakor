@@ -105,7 +105,7 @@ SUBSYSTEM_DEF(accessories) // just 'accessories' for brevity
 	snouts_list_taj = init_sprite_accessory_subtypes(/datum/sprite_accessory/snouts_taj)[DEFAULT_SPRITE_LIST]
 	snouts_list_vulp = init_sprite_accessory_subtypes(/datum/sprite_accessory/snouts_vulp)[DEFAULT_SPRITE_LIST]
 	horns_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/horns, add_blank = TRUE)[DEFAULT_SPRITE_LIST]
-	ears_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/ears, add_blank = TRUE)[DEFAULT_SPRITE_LIST]
+	ears_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/ears)[DEFAULT_SPRITE_LIST]
 	wings_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/wings, add_blank = TRUE)[DEFAULT_SPRITE_LIST]
 	wings_open_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/wings_open)[DEFAULT_SPRITE_LIST]
 	frills_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/frills, add_blank = TRUE)[DEFAULT_SPRITE_LIST]
