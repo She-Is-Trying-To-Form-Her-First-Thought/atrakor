@@ -157,6 +157,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_MUTANT_COLORS "mutcolors"
 /// Species with this trait have mutant colors that cannot be chosen by the player, nor altered ingame by external means
 #define TRAIT_FIXED_MUTANT_COLORS "fixed_mutcolors"
+/// They have cat ears IDK this pref is fighting me man
+#define TRAIT_KITTY_EARS_MEOW "kitty_ears_meow"
 /// Humans with this trait won't get bloody hands, nor bloody feet
 #define TRAIT_NO_BLOOD_OVERLAY "no_blood_overlay"
 /// Humans with this trait cannot have underwear

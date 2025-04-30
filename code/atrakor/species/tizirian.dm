@@ -36,7 +36,7 @@
 	)
 	fixed_mut_color = null
 	preview_outfit = /datum/outfit/tizirian_preview
-	hair_color_mode = USE_FIXED_MUTANT_COLOR
+	hair_color_mode = USE_MUTANT_COLOR
 
 /datum/species/tizirian/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()

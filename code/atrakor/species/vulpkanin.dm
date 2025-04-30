@@ -5,6 +5,7 @@
 	inherent_traits = list(
 		TRAIT_MUTANT_COLORS,
 		TRAIT_FIXED_MUTANT_COLORS,
+		TRAIT_KITTY_EARS_MEOW,
 	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	body_markings = list(
@@ -36,7 +37,7 @@
 	fixed_mut_color = null
 	no_equip_flags = ITEM_SLOT_SPEC_STORAGE
 	preview_outfit = /datum/outfit/vulpkanin_preview
-	hair_color_mode = USE_FIXED_MUTANT_COLOR
+	hair_color_mode = USE_MUTANT_COLOR
 
 /datum/species/vulpkanin/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons)
 	var/obj/item/organ/ears/cat/ears = new(FALSE, human_who_gained_species.dna.features["ears"])
