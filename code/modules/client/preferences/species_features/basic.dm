@@ -160,6 +160,7 @@
 	main_feature_name = "Hairstyle"
 	should_generate_icons = TRUE
 	relevant_head_flag = HEAD_HAIR
+	can_randomize = TRUE
 
 /datum/preference/choiced/hairstyle/has_relevant_feature(datum/preferences/preferences)
 	return ..() || (/datum/quirk/item_quirk/bald::name in preferences.all_quirks)

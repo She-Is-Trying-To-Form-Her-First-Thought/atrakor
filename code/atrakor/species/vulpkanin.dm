@@ -14,6 +14,7 @@
 	mutant_organs = list(
 		/obj/item/organ/snout/vulpkanin = "Sharp",
 		/obj/item/organ/tail/fluffy = "Big",
+		/obj/item/organ/ears/cat = "Lynx"
 	)
 	mutantears = /obj/item/organ/ears/cat
 	mutanttongue = /obj/item/organ/tongue
@@ -40,8 +41,6 @@
 	hair_color_mode = USE_MUTANT_COLOR
 
 /datum/species/vulpkanin/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons)
-	var/obj/item/organ/ears/cat/ears = new(FALSE, human_who_gained_species.dna.features["ears"])
-	ears.Insert(human_who_gained_species, movement_flags = DELETE_IF_REPLACED)
 	return ..()
 
 /datum/species/vulpkanin/get_features()
@@ -162,5 +161,6 @@
 /datum/species/vulpkanin/prepare_human_for_preview(mob/living/carbon/human/lizard_for_preview)
 	lizard_for_preview.dna.features["mcolor"] = "#8a8783"
 	lizard_for_preview.dna.species.fixed_mut_color = "#8a8783"
+	lizard_for_preview.update_hair()
 	regenerate_organs(lizard_for_preview)
 	lizard_for_preview.update_body(is_creating = TRUE)

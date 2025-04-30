@@ -19,6 +19,7 @@ GLOBAL_LIST_INIT(color_list_lizard, list(
 	category = PREFERENCE_CATEGORY_FEATURES
 	main_feature_name = "Species Color"
 	should_generate_icons = TRUE
+	can_randomize = TRUE
 
 /datum/preference/choiced/species_color/icon_for(value)
 	var/static/datum/universal_icon/scale_base

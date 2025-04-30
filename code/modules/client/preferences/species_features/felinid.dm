@@ -29,7 +29,9 @@
 
 	var/species_type = preferences.read_preference(/datum/preference/choiced/species)
 	var/datum/species/species = GLOB.species_prototypes[species_type]
-	return (species.mutantears == /obj/item/organ/ears/cat)
+	if(species.mutantears == /obj/item/organ/ears/cat)
+		return TRUE
+	return FALSE
 
 /datum/preference/choiced/felinid_ears/init_possible_values()
 	return assoc_to_keys_features(SSaccessories.ears_list)

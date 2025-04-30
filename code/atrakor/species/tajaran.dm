@@ -14,6 +14,7 @@
 	mutant_organs = list(
 		/obj/item/organ/snout/tajaran = "Sharp",
 		/obj/item/organ/tail/fluffy = "Big",
+		/obj/item/organ/ears/cat = "Coeurl"
 	)
 	mutantears = /obj/item/organ/ears/cat
 	mutanttongue = /obj/item/organ/tongue/cat
@@ -40,8 +41,6 @@
 	hair_color_mode = USE_MUTANT_COLOR
 
 /datum/species/tajaran/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons)
-	var/obj/item/organ/ears/cat/ears = new(FALSE, human_who_gained_species.dna.features["ears"])
-	ears.Insert(human_who_gained_species, movement_flags = DELETE_IF_REPLACED)
 	return ..()
 
 /datum/species/tajaran/get_features()
