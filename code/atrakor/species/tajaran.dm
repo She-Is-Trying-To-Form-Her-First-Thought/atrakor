@@ -39,8 +39,8 @@
 	hair_color_mode = USE_FIXED_MUTANT_COLOR
 
 /datum/species/tajaran/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons)
-	var/obj/item/organ/ears/cat/ears = new(FALSE, target_human.dna.features["ears"])
-	ears.Insert(target_human, movement_flags = DELETE_IF_REPLACED)
+	var/obj/item/organ/ears/cat/ears = new(FALSE, human_who_gained_species.dna.features["ears"])
+	ears.Insert(human_who_gained_species, movement_flags = DELETE_IF_REPLACED)
 	return ..()
 
 /datum/species/tajaran/get_features()
