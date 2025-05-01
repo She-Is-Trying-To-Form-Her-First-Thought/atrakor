@@ -39,9 +39,9 @@
 	desc = "Full upper body plate armor, made of exceptional modern material and decorated extensively. No one set of plate \
 		looks the same as another, and the value of each set is measured in not only it's material, but also a complete \
 		original mural without plate replacement despite seeing combat."
-	icon = 'icons/atrakor/tiziria/gear.dmi'
+	icon = 'icons/atrakor/tajara/gear.dmi'
 	icon_state = "armor"
-	worn_icon = 'icons/atrakor/tiziria/gear_worn.dmi'
+	worn_icon = 'icons/atrakor/tajara/gear_worn.dmi'
 	worn_icon_state = "armor"
 
 /obj/item/clothing/armor_slot/tajaran/gold
